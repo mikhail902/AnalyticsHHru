@@ -35,7 +35,7 @@ class HHruConnector(APIConnector):
     def get_vacancies(self, query: str) -> List[Dict]:
         """Получает вакансии с hh.ru."""
         try:
-            params = {"text": query, "area": 113, "per_page": 100}  # area: 113 - Россия
+            params = {"text": query, "area": 113, "per_page": 100}
             response = self.__send_request(self.__base_url, params)
             data = response.json()
             return data.get("items", [])
